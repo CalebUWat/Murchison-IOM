@@ -142,6 +142,9 @@ else:
         # Load the reference structure into PyMOL
         cmd.load(ref_path, "reference")
 
+        # Remove hydrogen atoms from the reference molecule
+        cmd.remove("hydro")
+
         for j, target_file in enumerate(molecule_files):
             if i == j:
                 rmsd_matrix[i, j] = 0.0  # RMSD of a molecule with itself is 0
